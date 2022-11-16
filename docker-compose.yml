@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: docker
       POSTGRES_DB: base_dados
     networks:
-      - rede-web-brigde
+      - rede-web-bridge
     volumes:
       - meu-volume-web:/home/arquivos
   adminer:
