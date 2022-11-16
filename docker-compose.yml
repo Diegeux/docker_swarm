@@ -1,0 +1,32 @@
+services:
+  database:
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: exampledb
+    networks:
+      - rede-web-brigde
+    volumes:
+      - meu-volume-web:/home/arquivos
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    restart: always
+    depends_on:
+      - database
+    networks:
+      - rede-web-bridge
+    volumes:
+      - meu-volume-web:/home/arquivos
+
+networks:
+    rede-web-bridge:
+        driver: bridge
+volumes:
+  meu-volume-web:
+    
