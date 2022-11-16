@@ -5,9 +5,9 @@ services:
       - "5432:5432"
     restart: always
     environment:
-      POSTGRES_USER: docker
+      POSTGRES_USER: diego_igor
       POSTGRES_PASSWORD: docker
-      POSTGRES_DB: exampledb
+      POSTGRES_DB: base_dados
     networks:
       - rede-web-brigde
     volumes:
